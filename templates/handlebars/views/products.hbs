@@ -1,0 +1,24 @@
+<div class="row">
+    {{#each products}}
+     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                  <p class="card-text"> {{description}}</p>
+                  <h5 class="text-center"> <span class="fw-bold">Price: </span><span class="text-warning"> ${{price}}</span></h5>
+                  <a href="#" class="btn btn-primary">BUY</a>
+                </div>
+              </div>
+        </div>
+    {{else}}
+    <p class="text-center"> No Products</p>
+    {{/each}}
+</div>
+
+
+{{!-- {{#if loggedIn}}
+
+    <p> Logged In</p>
+{{else}}
+<p> Not Logged In</p>
+{{/if}} --}}

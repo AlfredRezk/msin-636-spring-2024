@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.darkbg{
+    background-color: #131921;
+}
+a.navbar-brand>img{
+    width: 100px;
+    margin-left: 5px;
+    border: 1px solid transparent;
+    padding: 10px 10px;
+
+}
+a.navbar-brand>img:hover{
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.input-group>select{
+ width: 75px ;
+ border-radius: 5px 0 0 5px;
+ background-color: #fffbfb;
+ outline: none;
+
+}
