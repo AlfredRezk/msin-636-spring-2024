@@ -1,0 +1,22 @@
+nav.navbar{
+    background-color: #131921;
+}
+
+.bg-main{
+    background-color: #febd69;
+}
+.navbar-brand>h3{
+    color: #febd69;
+}
+#search-field{
+    border-radius: 0px;
+}
+.active{
+    color:#febd69
+}
+
+.notification{
+    position: fixed;
+    top:10px;
+    right: 10px;
+}
