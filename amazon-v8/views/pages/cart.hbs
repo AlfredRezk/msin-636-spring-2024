@@ -1,0 +1,56 @@
+<section class="card card-body shadow">
+  <h2 class="text-center">YOUR CART</h2>
+
+  <ul class="list-group">
+    {{#each cart.products}}
+      <li class="list-group-item">
+        <div
+          class="d-flex align-items-center align-items-lg-start text-lg-left flex-lf-row justify-content-between"
+        >
+          <div class="d-flex align-items-center">
+            <a href="/products/{{productId._id}}">
+              <img
+                src="/images/{{productId.image}}"
+                alt="{{productId.title}}"
+                width="160"
+                height="160"
+                style="object-fit: contain;"
+              />
+            </a>
+            <h6 class="fw-bold">
+              <a href="/products/{{productId._id}}">{{productId.title}}</a></h6>
+          </div>
+
+          <div class="d-flex align-items-center my-auto">
+          <h3 class="me-5 text-warning"> ${{productId.price}}</h3>
+
+            <div class="input-group mb-3 me-5">
+              <div class="input-group-text">
+               <a class="btn btn-sm" href="/cart/inc/{{productId._id}}"> + </a> 
+               </div>
+               <input
+                type="text"
+                class="form-control"
+                style="width: 3rem"
+                value="{{qty}}"
+              />
+                      <div class="input-group-text">
+               <a class="btn btn-sm" href="/cart/dec/{{productId._id}}"> - </a> 
+               </div>
+            </div>
+        <h3 class="me-5"> ${{total}}</h3>
+
+  
+            <form action="/cart/delete/" method="POST">
+            <input type="hidden" name="prodId" value="{{productId._id}}">
+                <button type="submit" class="btn btn-warning text-light" style="min-width: max-content;"> Remove</button>
+            </form>
+          </div>
+        </div>
+
+      </li>
+    {{else}}
+      <li class="text-center list-group-item"> No Items in your cart</li>
+    {{/each}}
+  </ul>
+</section>

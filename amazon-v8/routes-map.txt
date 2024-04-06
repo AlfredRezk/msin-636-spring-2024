@@ -1,0 +1,12 @@
+Admin routes
+GET   /admin/add-product        View an add form 
+POST  /admin/add-product        process the product and store it in DB 
+GET   /admin/products           Get all products added by admin
+GET   /admin/edit-product/:id   View the edit form
+POST  /admin/edit-product       Process the editiong of the product
+POST  /admin/delete-product           Delete Product
+// GET /admin/delete-product/:id
+Products routes 
+GET     /                      All products
+GET     /products/:id           Get product Details
+

@@ -1,0 +1,42 @@
+<form action="/admin/{{#if editMode}}edit-product{{else}}add-product{{/if}}" method="POST"
+class="p-4 {{#if editMode}} bg-light {{else}}bg-dark {{/if}}card shadow"
+enctype="multipart/form-data"
+>
+
+<h1 class="{{#if editMode}} text-dark {{else}}text-light {{/if}}text-center my-2"> {{#if editMode}} EDIT {{else}}ADD {{/if}}</h1>
+<input type="text"
+class="form-control mb-3"
+name="title"
+placeholder="Product Title"
+value="{{product.title}}"
+>
+<input type="file"
+class="form-control mb-3"
+name="image"
+value="{{product.image}}"
+id="image-upload"
+style="display: none;"
+>
+
+<div class="text-center mb-3">
+
+<button class="btn btn-warning" type="button" onclick="document.getElementById('image-upload').click()">  Upload Image</button>
+</div>
+<input type="number"
+class="form-control mb-3"
+name="price"
+placeholder="Product Price"
+value="{{product.price}}"
+>
+
+<textarea name="description">
+    {{#if editMode}} {{product.description}} {{/if}}
+</textarea>
+
+{{#if editMode}}
+    <input type="hidden" name="id" value="{{product._id}}">
+{{/if}}
+<div class="text-center">
+    <button type="submit" class="btn btn-warning mt-3"> {{#if editMode}} EDIT {{else}} ADD{{/if}}</button>
+</div>
+</form>
