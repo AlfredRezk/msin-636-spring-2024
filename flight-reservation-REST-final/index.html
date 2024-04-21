@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div id="flight"></div>
+    <script>
+      const fetchFlights = async () => {
+        try{
+            const res = await fetch(
+          "http://127.0.0.1:8080/api/flights",
+
+          {
+            headers: {
+              'Authorization':
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjFkYmIyOTRjNjU3MzQ2N2YyMzgwZWQiLCJpYXQiOjE3MTM0MDEyMzYsImV4cCI6MTcxMzQwMzAzNn0.r73cugbfTOkR0bVxEX-7mh0NS-lqzw8sE3CVvGm3NnE",
+            },
+          },
+        );
+
+        const flights = await res.json()
+        console.log(flights)
+    
+        }catch(err){
+            throw err
+        }
+      };
+
+      fetchFlights()
+    </script>
+  </body>
+</html>
